@@ -98,8 +98,7 @@ def preprocess_image_file_train(line_data):
 def preprocess_image_file_predict(line_data):
     # Preprocessing Prediction files and augmenting
     path_file = line_data['center'][0].strip()
-    image = cv2.imread(path_file)
-    image = cv2.cvtColor(image,cv2.COLOR_BGR2RGB)
+    image = imread('data/' + path_file)
     image = preprocessImage(image)
     image = np.array(image)
     return image
